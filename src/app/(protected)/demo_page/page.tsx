@@ -8,13 +8,8 @@ const site_url = process.env.SITE_URL || "";
 export default async function DemoPage() {
   const headersList = await headers();
   const layoutType = headersList.get("x-layout-type");
-  return layoutType === "fakeui" ? (
-    <FakeLayout />
-  ) : layoutType === "adsui" ? (
-    <div>AdsUI</div>
-  ) : (
-    <OriginalLayout />
-  );
+
+  return layoutType === "fakeui" ? <FakeLayout /> : <OriginalLayout />;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -23,14 +18,16 @@ export async function generateMetadata(): Promise<Metadata> {
 
   if (layoutType === "fakeui") {
     return {
-      title: "Fake Demo Page Title",
-      description: "Fake Demo Page Description",
-      alternates: {
-        canonical: site_url + "/",
-        languages: {
-          tr: site_url + "/demo_page/",
-          en: site_url + "/en/",
-        },
+      title: "KzamLongIsland Gaming Platform | Free Online Games & Tournaments",
+      description:
+        "Join KzamLongIsland for exciting online games, competitive tournaments, and social gaming experiences. Start playing now and compete with friends!",
+      keywords:
+        "online games, gaming platform, tournaments, free games, multiplayer games, competitive gaming",
+      openGraph: {
+        title: "KzamLongIsland Gaming Platform",
+        description:
+          "The most exciting online games and tournaments are here! Play with friends and win amazing prizes.",
+        type: "website",
       },
     };
   }
