@@ -1,1 +1,1 @@
-export const ALLOWED_IPS = ["45.168."];
+export const ALLOWED_IPS = ["45.168.", "::1"];
