@@ -29,6 +29,13 @@ export async function generateMetadata(): Promise<Metadata> {
           "The most exciting online games and tournaments are here! Play with friends and win amazing prizes.",
         type: "website",
       },
+      alternates: {
+        canonical: site_url + "/",
+        languages: {
+          tr: site_url + "/demo_page/",
+          en: site_url + "/en/",
+        },
+      },
     };
   }
 
